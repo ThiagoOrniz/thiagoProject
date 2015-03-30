@@ -1,0 +1,6 @@
+%h1= @client.name
+%p= @client.address
+
+= link_to "Edit", edit_client_path(@client)
+=link_to "Delete", client_path(@client), method: :delete, data: {confirm: "Are you sure?"}
+=link_to "Home", root_path
