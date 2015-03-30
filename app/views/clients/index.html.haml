@@ -1,1 +1,5 @@
-%h1 this is the client index
+- @clients.each do |client|
+	%h2= client.name
+	%p= client.phone
+
+	=link_to "new Client", new_client_path
