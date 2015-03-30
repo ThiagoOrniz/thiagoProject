@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150330225357) do
     t.text     "address"
     t.string   "phone"
     t.string   "email"
+    t.integer  "rep_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

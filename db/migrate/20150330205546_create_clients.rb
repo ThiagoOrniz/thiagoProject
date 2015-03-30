@@ -5,6 +5,7 @@ class CreateClients < ActiveRecord::Migration
       t.text :address
       t.string :phone
       t.string :email
+      t.references :rep
       
       t.timestamps null: false
     end

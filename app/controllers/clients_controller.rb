@@ -9,7 +9,9 @@ class ClientsController < ApplicationController
 	end
 
 	def create
+
 		@client = Client.new(client_params)
+		@client.rep_id = current_rep.id
 
 		if @client.save
 			redirect_to @client
@@ -42,7 +44,7 @@ class ClientsController < ApplicationController
 	private
 
 	def client_params
-		params.require(:client).permit(:name, :address, :phone, :email)
+		params.require(:client).permit(:name, :address, :phone, :email, :rep_id)
 	end
 
 	def find_client
