@@ -1,5 +1,6 @@
+=link_to "new Client", new_client_path
+
 - @clients.each do |client|
-	%h2= client.name
+	%h2= link_to client.name, client
 	%p= client.phone
 
-	=link_to "new Client", new_client_path
