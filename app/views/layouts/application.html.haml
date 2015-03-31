@@ -10,4 +10,14 @@
 	%p.notice= notice
 	%p.alert= alert
 
+	- if rep_signed_in?
+		= link_to "Home", pages_path
+		= link_to "Clients", clients_path
+		= link_to "Sign out", destroy_rep_session_path, method: :delete
+		
+	- else
+		= link_to "Sign up", new_rep_registration_path
+		= link_to "Sign in", new_rep_session_path
+
+
 	=yield
