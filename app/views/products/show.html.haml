@@ -1,0 +1,4 @@
+%h1= @product.name
+%p= @product.price
+%p= @product.comment
+=image_tag(@product.url, :alt => @product.name, :width => 300, :height => 300)
