@@ -5,4 +5,5 @@ class Rep < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :clients
+  has_many :sales
 end

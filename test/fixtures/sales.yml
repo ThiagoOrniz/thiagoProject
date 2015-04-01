@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  saleItem_id: 
+  date: MyString
+  client_id: 
+  rep_id: 
+
+two:
+  saleItem_id: 
+  date: MyString
+  client_id: 
+  rep_id: 

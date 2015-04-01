@@ -1,0 +1,7 @@
+%h1 New sale
+
+- @clients.each do |client|
+    %p= client.name
+    =link_to "Select"
+
+= render 'form'
