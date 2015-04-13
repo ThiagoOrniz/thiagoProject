@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'haml','~> 4.0.5'
 gem 'simple_form','~> 3.0.2'
 gem 'devise', '~> 3.4.1'
-
+gem 'cocoon'
 gem 'rails', '4.2.1'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'

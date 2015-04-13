@@ -30,11 +30,13 @@ ActiveRecord::Schema.define(version: 20150331205826) do
     t.integer  "product_id"
     t.decimal  "price"
     t.integer  "quantity"
+    t.integer  "sale_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "items", ["product_id"], name: "index_items_on_product_id", using: :btree
+  add_index "items", ["sale_id"], name: "index_items_on_sale_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -64,7 +66,6 @@ ActiveRecord::Schema.define(version: 20150331205826) do
   add_index "reps", ["reset_password_token"], name: "index_reps_on_reset_password_token", unique: true, using: :btree
 
   create_table "sales", force: :cascade do |t|
-    t.string   "date"
     t.integer  "client_id"
     t.integer  "rep_id"
     t.datetime "created_at", null: false
@@ -75,6 +76,7 @@ ActiveRecord::Schema.define(version: 20150331205826) do
   add_index "sales", ["rep_id"], name: "index_sales_on_rep_id", using: :btree
 
   add_foreign_key "items", "products"
+  add_foreign_key "items", "sales"
   add_foreign_key "sales", "clients"
   add_foreign_key "sales", "reps"
 end

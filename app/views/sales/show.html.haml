@@ -1,1 +1,16 @@
-%h1 holder
+
+%h2 Client:
+%h3= @client.name
+
+- @items.each do |item|
+	%p Product Name:
+	%p= item.product.name
+	%p Quantity:
+	%p= item.quantity
+	%p Price:
+	%p= item.price
+	%p Total:
+	%p= @total
+
+= link_to "Delete", sale_path, method: :delete, data: {confirm: "Are you sure?" }
+

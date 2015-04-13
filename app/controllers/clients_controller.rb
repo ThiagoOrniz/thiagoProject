@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
 	before_action :find_client, only: [:show, :edit, :update, :destroy]
 	
 	def index
-		@clients = Client.all.order("name ASC");
+		@clients = Client.where(:rep_id => current_rep.id)
 	end
 
 	def show

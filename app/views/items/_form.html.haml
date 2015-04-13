@@ -1,0 +1,6 @@
+= simple_form_for item do |f|
+	
+	=f.association :product, as: :check_boxes
+	=f.input :quantity
+	
+	=f.submit

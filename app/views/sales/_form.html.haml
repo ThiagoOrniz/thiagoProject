@@ -1,8 +1,13 @@
-= render 'items/form'
 
-= simple_form_for @sale do |f|
-	=f.input :date
-	=f.input :client
-	=f.input :rep
-	=f.input :item
-	=f.submit 
+= simple_form_for @sale  do |f|
+	
+	=f.association :client, default: :first
+
+	= f.simple_fields_for :items do |i|
+		= render 'item_fields', f: i
+
+	=link_to_add_association 'Add Item', f , :items
+	<br>
+	<br>
+	=f.submit
+	
