@@ -1,13 +1,14 @@
 
-= simple_form_for @sale  do |f|
-	
-	=f.association :client, default: :first
+= simple_form_for @sale, html: { id: 'sale-form' }  do |f|
 
-	= f.simple_fields_for :items do |i|
-		= render 'item_fields', f: i
+	= f.association :client, default: :first
 
-	=link_to_add_association 'Add Item', f , :items
+	.items
+		= f.simple_fields_for :items do |i|
+			= render 'item_fields', f: i
+
+	=link_to_add_association 'Add Item', f , :items, {'data-association-insertion-node' => '#sale-form .items', 'data-association-insertion-method' => 'append'}
 	<br>
 	<br>
 	=f.submit
-	
+
