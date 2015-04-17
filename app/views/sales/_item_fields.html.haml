@@ -1,4 +1,6 @@
 .nested_fields
 	=f.association :product, default: :first
 	=f.input :quantity,collection: 1..99, default: 1
-	=link_to_remove_association "Remove", f
+	= link_to_remove_association "Remove", f
+
+	= link_to_remove_association "Remove", f, class: "form-button btn btn-default"
