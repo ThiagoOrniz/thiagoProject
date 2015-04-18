@@ -1,4 +1,7 @@
-%h1= @product.name
-%p= @product.price
-%p= @product.comment
+%h4 Product: #{@product.name}
+%h4 Price: #{@product.price}
+%h4 Comment: #{@product.comment}
 =image_tag(@product.url, :alt => @product.name, :width => 300, :height => 300)
+%br
+%br
+= link_to "Back", clients_path

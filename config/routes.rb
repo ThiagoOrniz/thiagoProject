@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :reps
   resources :clients
-  resources :pages
-  resources :products
+  resources :pages, only: [:index]
+  resources :products, only: [:index, :show]
 
   resources :sales do
   	resources :clients

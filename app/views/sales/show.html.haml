@@ -1,16 +1,20 @@
 
-%h2 Client:
-%h3= @client.name
+%h3 Client: #{@client.name}
+%p Date: #{@date}
+%table
+	%tbody
+		%tr
+			%th Product 
+			%th Price 
+			%th Quantity 
 
-- @items.each do |item|
-	%p Product Name:
-	%p= item.product.name
-	%p Quantity:
-	%p= item.quantity
-	%p Price:
-	%p= item.price
-	%p Total:
-	%p= @total
+		- @items.each do |item|
+			%tr
+				%td=item.product.name
+				%td=item.price
+				%td=item.quantity
+
+%h3 Total: $#{@total}
 
 = link_to "Delete", sale_path, method: :delete, data: {confirm: "Are you sure?" }
 

@@ -2,16 +2,18 @@ class SalesController < ApplicationController
 	before_action :find_sale, only: [:show, :destroy]
 
 	def index
-		@sales = Sale.where(:rep_id => current_rep.id)
+		@sales = Sale.where(rep_id: current_rep.id)
 	end
 
 	def show
 		sale = find_sale
-		@items = Item.where(:sale_id => (find_sale).id)
+		@items = Item.where(sale_id: (find_sale).id)
 		
 		sale.update_price(@items)
 		
 		@client = Client.find(sale.client_id)
+
+		@date = sale.created_at.strftime("%d %b. %Y")
 		@total =0;
 		
 		@items.each do |item|
@@ -21,7 +23,6 @@ class SalesController < ApplicationController
 	
 	def create
 		@sale = Sale.new(sale_params)
-
 		@sale.rep_id = current_rep.id
 			
 		if @sale.save			
@@ -32,7 +33,7 @@ class SalesController < ApplicationController
 	end
 
 	def destroy
-		Item.destroy_all(:sale_id => @sale.id)
+		Item.destroy_all(sale_id: @sale.id)
 		@sale.destroy
 		redirect_to root_path, notice: "Successfully deleted "
 	end

@@ -11,5 +11,4 @@ class Sale < ActiveRecord::Base
       item.price = @product.price
     end 
   end
-
 end

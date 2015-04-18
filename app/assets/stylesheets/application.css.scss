@@ -16,6 +16,13 @@
 
 @import "bootstrap";
 
+table td, th{
+  padding: 5px;
+}
+img{
+  text-align: center;
+}
+
 #msg {
   position: absolute;
   top: 0;
@@ -40,15 +47,11 @@
     text-align: center;
 }
 
-
 #slideshow {
     position:relative;
     height:350px;
 }
 
-img{
-  text-align: center;
-}
 
 #slideshow IMG {
     position: absolute;
@@ -66,4 +69,47 @@ img{
 
 #slideshow IMG.last-active {
     z-index:9;
+}
+
+.items {
+  border: thin solid;
+  border-color: #d3d3d3;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.nested-fields{
+  padding: 10px;
+  border-bottom: thin solid;
+  border-color: #d3d3d3;
+}
+
+.simple_form div.input {
+  margin-bottom: 10px;
+  clear: both;
+}
+
+.simple_form label {
+  float: left;
+  width: 100px;
+  text-align: right;
+  margin: 2px 10px;
+}
+
+div.boolean, .simple_form input[type='submit'] {
+  margin-left: 120px;
+  color: #337ab7;
+  background-color: aliceblue;
+  border: none;
+}
+
+.field_with_errors {
+  background-color: #ff3333;
+}
+
+.simple_form .error {
+  clear: left;
+  color: black;
+  display: block;
+  margin-left: 120px;
 }

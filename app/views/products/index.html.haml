@@ -1,5 +1,11 @@
-%h1 Products
 
+%h2 Products
+%br
+%hr
 - @products.each do |product|
-	%h2= link_to product.name, product
-	%p= product.price
+	%h5= product.name
+	%p$ #{product.price}
+	%p= link_to "details", product
+	%hr	
+
+

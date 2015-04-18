@@ -2,14 +2,13 @@ class ClientsController < ApplicationController
 	before_action :find_client, only: [:show, :edit, :update, :destroy]
 	
 	def index
-		@clients = Client.where(:rep_id => current_rep.id)
+		@clients = Client.where(rep_id: current_rep.id)
 	end
 
 	def show
 	end
 
 	def create
-
 		@client = Client.new(client_params)
 		@client.rep_id = current_rep.id
 
@@ -30,7 +29,6 @@ class ClientsController < ApplicationController
 	def update
 		if @client.update(client_params)
 			redirect_to @client
-
 		else
 			render 'edit'
 		end

@@ -23,7 +23,6 @@ $(document).ready(function(){
 	},2500);
 });
 
-
 function slideSwitch() {
 	var $active = $('#slideshow IMG.active');
 
@@ -42,5 +41,5 @@ function slideSwitch() {
 }
 
 $(function() {
-    setInterval( "slideSwitch()", 5000 );
+    setInterval( "slideSwitch()", 3500 );
 });
