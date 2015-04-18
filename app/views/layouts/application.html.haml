@@ -3,23 +3,27 @@
 %html
 %head
 	%title Rails Project - Thiago Orniz
-	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= stylesheet_link_tag    'application', media: 'all'
+	= javascript_include_tag 'application'
 	= csrf_meta_tags
 %body
-	%p.notice= notice
-	%p.alert= alert
+	- if notice
+		#msg
+			%p.notice= notice
+	-elsif alert
+		#msg
+			%p.alert= alert
+			
+	%ul.nav.nav-tabs
+		- if rep_signed_in?
+			%li= link_to "Home", pages_path
+			%li= link_to "Clients", clients_path
+			%li= link_to "Products", products_path
+			%li= link_to "Sales", sales_path
+			%li= link_to "Sign out", destroy_rep_session_path, method: :delete
+		- else
+			%li= link_to "Sign in", new_rep_session_path
 
-	- if rep_signed_in?
-		= link_to "Home", pages_path
-		= link_to "Clients", clients_path
-		= link_to "Products", products_path
-		= link_to "Sales", sales_path
-		= link_to "Sign out", destroy_rep_session_path, method: :delete
-
-	- else
-		= link_to "Sign up", new_rep_registration_path
-		= link_to "Sign in", new_rep_session_path
-
+.container
 	=yield
 

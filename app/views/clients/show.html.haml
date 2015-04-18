@@ -1,7 +1,8 @@
-%h1= @client.name
-%p= @client.address
-%p= @client.phone
-%p= @client.email
-%p= @client.rep_id
+%h4 Name: #{@client.name}
+%h4 Address: #{@client.address}
+%h4 Phone: #{@client.phone} 
+%h4 Email: #{@client.email}
+%br
 = link_to "Edit", edit_client_path(@client)
 =link_to "Delete", client_path(@client), method: :delete, data: {confirm: "Are you sure?"}
+= link_to "Back", clients_path

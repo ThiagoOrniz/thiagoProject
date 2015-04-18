@@ -1,2 +1,20 @@
-%h2 Hello
+.wrapperCentered
 
+	%h3 Hello, #{@rep}
+	%br
+
+	- if(!current_rep)
+		%p Be part of our team
+		= link_to "Sign up", new_rep_registration_path
+
+	%br
+	%br
+	%br
+
+	#slideshow
+		=image_tag "slide1.jpg", height: '350', width: '350', :class => "active"
+		=image_tag "slide2.jpg", height: '350', width: '350'
+		=image_tag "slide3.jpg", height: '350', width: '350'
+	
+
+	

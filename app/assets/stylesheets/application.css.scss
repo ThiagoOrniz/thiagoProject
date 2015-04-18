@@ -14,6 +14,56 @@
  *= require_self
  */
 
-
-
 @import "bootstrap";
+
+#msg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: aliceblue;
+  opacity: 0.8;
+  text-align: center;
+  padding: 5px;
+  font-size: 1.25em;
+}
+
+.container{		
+       width: 75%;
+       margin:auto; 
+		   padding:10px; 
+		   background-color: aliceblue;
+		   min-height: 600px;
+}
+
+.wrapperCentered{   
+    text-align: center;
+}
+
+
+#slideshow {
+    position:relative;
+    height:350px;
+}
+
+img{
+  text-align: center;
+}
+
+#slideshow IMG {
+    position: absolute;
+    top: 0;
+    left: 32%;
+    margin-left: auto;
+    z-index: 8;
+    border: thick solid;
+    border-color: bisque;
+}
+
+#slideshow IMG.active {
+    z-index:10;
+}
+
+#slideshow IMG.last-active {
+    z-index:9;
+}
