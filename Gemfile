@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'puma'
 gem 'bootstrap-sass'  
 gem 'haml','~> 4.0.5'
 gem 'simple_form','~> 3.0.2'
